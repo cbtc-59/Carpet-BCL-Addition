@@ -26,3 +26,7 @@ Minecraft **1.21**，Java **21**。
 ## 下载
 
 - [GitHub Releases](https://github.com/cbtc-59/carpetbcl/releases)
+
+---
+
+本模组由 AI（Claude Code + DeepSeek）开发，本人辅助测试与决策。

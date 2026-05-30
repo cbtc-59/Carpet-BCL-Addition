@@ -1,6 +1,6 @@
 # Carpet-BCL-Addition
 
-[![License](https://img.shields.io/github/license/cbtc-59/Carpet-BCL-Addition.svg)](https://choosealicense.com/licenses/mit/)
+[![License](https://img.shields.io/github/license/cbtc-59/Carpet-BCL-Addition)](https://choosealicense.com/licenses/mit/)
 
 一个 [Carpet](https://github.com/gnembon/fabric-carpet) 扩展模组。
 

@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/cbtc-59/carpetbcl)](https://choosealicense.com/licenses/mit/)
 
-一个 [Carpet](https://github.com/gnembon/fabric-carpet) 扩展模组。允许玩家在生存模式下挖掘末地传送门框架方块。
+一个 [Carpet](https://github.com/gnembon/fabric-carpet) 扩展模组。
 
 ## 前置模组
 

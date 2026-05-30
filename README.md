@@ -1,6 +1,6 @@
 # Carpet-BCL-Addition
 
-[![License](https://img.shields.io/github/license/cbtc-59/carpetbcl)](https://choosealicense.com/licenses/mit/)
+[![License](https://img.shields.io/github/license/cbtc-59/Carpet-BCL-Addition)](https://choosealicense.com/licenses/mit/)
 
 一个 [Carpet](https://github.com/gnembon/fabric-carpet) 扩展模组。
 
@@ -25,7 +25,7 @@ Minecraft **1.21**，Java **21**。
 
 ## 下载
 
-- [GitHub Releases](https://github.com/cbtc-59/carpetbcl/releases)
+- [GitHub Releases](https://github.com/cbtc-59/Carpet-BCL-Addition/releases)
 
 ---
 

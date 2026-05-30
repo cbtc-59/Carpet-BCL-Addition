@@ -1,0 +1,7 @@
+{
+    "carpet.rule.mineableEndPortalFrame.name": "可挖掘末地传送门框架",
+    "carpet.rule.mineableEndPortalFrame.desc": "使末地传送门框架方块可挖掘",
+    "carpet.rule.mineableEndPortalFrame.extra.0": "启用后，末地传送门框架方块可在生存模式下被挖掘",
+    "carpet.rule.mineableEndPortalFrame.extra.1": "硬度设置为 50.0（与黑曜石相同，需要钻石镐或更高级镐）",
+    "carpet.rule.category.BCL": "BCL Addition"
+}

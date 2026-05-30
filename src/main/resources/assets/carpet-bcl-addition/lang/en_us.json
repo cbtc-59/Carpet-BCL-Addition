@@ -1,0 +1,7 @@
+{
+    "carpet.rule.mineableEndPortalFrame.name": "Mineable End Portal Frame",
+    "carpet.rule.mineableEndPortalFrame.desc": "Makes End Portal Frame blocks mineable",
+    "carpet.rule.mineableEndPortalFrame.extra.0": "When enabled, End Portal Frame blocks can be mined in survival mode",
+    "carpet.rule.mineableEndPortalFrame.extra.1": "Hardness is set to 50.0 (same as obsidian, requires diamond pickaxe or better)",
+    "carpet.rule.category.BCL": "BCL Addition"
+}

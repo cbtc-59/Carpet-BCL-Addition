@@ -1,0 +1,14 @@
+{
+    "required": true,
+    "package": "com.bcl.carpet.bcladdition.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "EndPortalFrameBlockMixin",
+        "EndPortalFrameBlockStateMixin",
+        "EndPortalFrameBlockDropMixin",
+        "EndPortalFrameMiningSpeedMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

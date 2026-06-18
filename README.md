@@ -1,32 +1,41 @@
 # Carpet-BCL-Addition
 
-[![License](https://img.shields.io/github/license/cbtc-59/Carpet-BCL-Addition.svg)](https://choosealicense.com/licenses/mit/)
+[![License](https://img.shields.io/github/license/cbtc-59/carpet-bcl-addition)](https://choosealicense.com/licenses/mit/)
+[![Github](https://img.shields.io/github/downloads/cbtc-59/carpet-bcl-addition/total?color=161616&label=Github%20downloads&logo=github)](https://github.com/cbtc-59/Carpet-BCL-Addition/releases)
 
-一个 [Carpet](https://github.com/gnembon/fabric-carpet) 扩展模组。
+一个 [fabric-carpet](https://github.com/gnembon/fabric-carpet) 扩展模组，添加了一些有趣的规则。
 
 ## 前置模组
 
 | 名称 | 类型 | 链接 |
-|---|---|---|
-| Carpet | 必须 | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/carpet) |
-| Fabric API | 必须 | [官方](https://fabricmc.net/) |
+|------|------|------|
+| Carpet | 必须 | [MC百科](https://www.mcmod.cn/class/2361.html) |
+| Fabric API | 必须 | [MC百科](https://www.mcmod.cn/class/3124.html) |
 
-Minecraft **1.21**，Java **21**。
+## 版本支持
+
+仅支持 Minecraft **1.21**。
 
 ## 规则
 
-使用 `/carpet mineableEndPortalFrame true` 启用。
+| 规则 | 类型 | 说明 |
+|------|------|------|
+| `mineableEndPortalFrame` | boolean | 使末地传送门框架方块可挖掘 |
+| `softNetherite` | boolean | 远古残骸和下界合金块硬度降为 1/18 |
+| `disableWindChargeEffect` | boolean | 阻止风弹改变方块状态 |
+| `channelingIgnoreConditions` | enum | 允许忽略三叉戟引雷的条件 |
+| `riptideIgnoreConditions` | boolean | 允许忽略三叉戟激流的条件 |
+| `forceOpenContainer` | enum | 允许打开被阻挡的容器 |
+| `truePeacefulMode` | boolean | 生物不会与玩家敌对 |
+| `playerCommandCloseScreen` | boolean | 为 /player 添加 esc 子命令 |
+| `fakePlayerAutoRestock` | boolean | 假玩家自动从背包补货 |
 
-| 规则 | 分类 | 默认值 | 说明 |
-|---|---|---|---|
-| `mineableEndPortalFrame` | BCL, SURVIVAL, FEATURE | false | 使末地传送门框架可挖掘 |
-
-启用后，末地传送门框架硬度为 50.0（与黑曜石相同），可使用镐挖掘并掉落自身。
+所有规则分类为 `BCL`。使用 `/carpet <规则名> <值>` 切换。
 
 ## 下载
 
 - [GitHub Releases](https://github.com/cbtc-59/Carpet-BCL-Addition/releases)
 
----
+## 致谢
 
-本模组由 AI（Claude Code + DeepSeek）开发，本人辅助测试与决策。
+部分规则设计和翻译参考了 [Carpet-Org-Addition](https://github.com/fcsailboat/Carpet-Org-Addition)。

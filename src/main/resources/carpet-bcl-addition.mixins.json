@@ -15,7 +15,10 @@
         "EnderChestForceOpenMixin",
         "RiptideIgnoreConditionsMixin",
         "TruePeacefulModeMixin",
-        "PlayerCommandCloseScreenMixin"
+        "PlayerCommandCloseScreenMixin",
+        "autorestock.ItemStackAutoRestockMixin",
+        "autorestock.LivingEntityAutoRestockMixin",
+        "autorestock.ServerPlayerInteractionManagerAutoRestockMixin"
     ],
     "injectors": {
         "defaultRequire": 1

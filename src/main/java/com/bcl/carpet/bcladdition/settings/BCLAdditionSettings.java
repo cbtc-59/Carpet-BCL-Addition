@@ -55,6 +55,13 @@ public class BCLAdditionSettings {
     )
     public static boolean truePeacefulMode = false;
 
+    // === 假玩家类 ===
+
+    @Rule(
+            categories = {BCL, SURVIVAL}
+    )
+    public static boolean fakePlayerAutoRestock = false;
+
     // === 命令类 ===
 
     @Rule(

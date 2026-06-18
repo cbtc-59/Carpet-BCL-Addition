@@ -4,7 +4,6 @@ import carpet.commands.PlayerCommand;
 import com.bcl.carpet.bcladdition.settings.BCLAdditionSettings;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -12,6 +11,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 import static net.minecraft.server.command.CommandManager.literal;
+import static com.mojang.brigadier.arguments.StringArgumentType.word;
+import static com.mojang.brigadier.arguments.StringArgumentType.getString;
 
 /**
  * Adds esc and mannequin subcommands to /player by intercepting the
@@ -20,15 +21,6 @@ import static net.minecraft.server.command.CommandManager.literal;
  */
 @Mixin(PlayerCommand.class)
 public class PlayerCommandCloseScreenMixin {
-
-    @WrapOperation(
-            method = "register",
-            at = @At(value = "INVOKE",
-                    target = "Lcom/mojang/brigadier/arguments/StringArgumentType;word()Lcom/mojang/brigadier/arguments/StringArgumentType;")
-    )
-    private static StringArgumentType wrapPlayerArgument(Operation<StringArgumentType> original) {
-        return original.call();
-    }
 
     @WrapOperation(
             method = "register",

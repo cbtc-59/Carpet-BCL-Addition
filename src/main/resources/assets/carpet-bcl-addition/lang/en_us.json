@@ -2,6 +2,39 @@
     "carpet.rule.mineableEndPortalFrame.name": "Mineable End Portal Frame",
     "carpet.rule.mineableEndPortalFrame.desc": "Makes End Portal Frame blocks mineable",
     "carpet.rule.mineableEndPortalFrame.extra.0": "When enabled, End Portal Frame blocks can be mined in survival mode",
-    "carpet.rule.mineableEndPortalFrame.extra.1": "Hardness is set to 50.0 (same as obsidian, requires diamond pickaxe or better)",
-    "carpet.rule.category.BCL": "BCL Addition"
+    "carpet.rule.mineableEndPortalFrame.extra.1": "Hardness is set to 50.0 (same as obsidian, requires diamond/netherite pickaxe)",
+    "carpet.rule.category.BCL": "BCL Addition",
+
+    "carpet.rule.softNetherite.name": "Soft Netherite",
+    "carpet.rule.softNetherite.desc": "Makes netherite blocks and ancient debris softer",
+    "carpet.rule.softNetherite.extra.0": "When enabled, ancient debris and netherite block hardness is reduced to 1/18",
+
+    "carpet.rule.disableWindChargeEffect.name": "Disable Wind Charge Effect",
+    "carpet.rule.disableWindChargeEffect.desc": "Prevents wind charges from changing block states",
+
+    "carpet.rule.channelingIgnoreConditions.name": "Channeling Ignore Conditions",
+    "carpet.rule.channelingIgnoreConditions.desc": "Allows ignoring conditions for trident channeling",
+    "carpet.rule.channelingIgnoreConditions.extra.0": "false: rule disabled",
+    "carpet.rule.channelingIgnoreConditions.extra.1": "ignore_weather: ignores weather condition",
+    "carpet.rule.channelingIgnoreConditions.extra.2": "ignore_weather_and_sky: ignores weather and sky access conditions",
+
+    "carpet.rule.riptideIgnoreConditions.name": "Riptide Ignore Conditions",
+    "carpet.rule.riptideIgnoreConditions.desc": "Allows ignoring conditions for trident riptide",
+
+    "carpet.rule.forceOpenContainer.name": "Force Open Container",
+    "carpet.rule.forceOpenContainer.desc": "Allows opening blocked containers",
+    "carpet.rule.forceOpenContainer.extra.0": "false: rule disabled",
+    "carpet.rule.forceOpenContainer.extra.1": "shulker_box: can open blocked shulker boxes",
+    "carpet.rule.forceOpenContainer.extra.2": "any: can open any blocked container",
+
+    "carpet.rule.fakePlayerKeepInventoryCondition.name": "Fake Player Keep Inventory Condition",
+    "carpet.rule.fakePlayerKeepInventoryCondition.desc": "Controls when fake players keep inventory on death",
+    "carpet.rule.fakePlayerKeepInventoryCondition.extra.0": "unconditional: always keep inventory",
+    "carpet.rule.fakePlayerKeepInventoryCondition.extra.1": "killed_by_player_or_the_void: only when killed by player or void",
+
+    "carpet.rule.truePeacefulMode.name": "True Peaceful Mode",
+    "carpet.rule.truePeacefulMode.desc": "Mobs will not become hostile towards players",
+
+    "carpet.rule.playerCommandCloseScreen.name": "Close Current Screen",
+    "carpet.rule.playerCommandCloseScreen.desc": "Enables /player esc subcommand to close a player's screen"
 }

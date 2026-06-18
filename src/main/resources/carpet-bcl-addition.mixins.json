@@ -6,7 +6,16 @@
         "EndPortalFrameBlockMixin",
         "EndPortalFrameBlockStateMixin",
         "EndPortalFrameBlockDropMixin",
-        "EndPortalFrameMiningSpeedMixin"
+        "EndPortalFrameMiningSpeedMixin",
+        "SoftNetheriteMixin",
+        "DisableWindChargeEffectMixin",
+        "ChannelingIgnoreConditionsMixin",
+        "ShulkerBoxForceOpenMixin",
+        "ChestBlockForceOpenMixin",
+        "EnderChestForceOpenMixin",
+        "RiptideIgnoreConditionsMixin",
+        "TruePeacefulModeMixin",
+        "PlayerCommandCloseScreenMixin"
     ],
     "injectors": {
         "defaultRequire": 1

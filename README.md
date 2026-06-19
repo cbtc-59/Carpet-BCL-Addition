@@ -21,14 +21,11 @@
 | 规则 | 类型 | 说明 |
 |------|------|------|
 | `mineableEndPortalFrame` | boolean | 使末地传送门框架方块可挖掘 |
-| `softNetherite` | boolean | 远古残骸和下界合金块硬度降为 1/18 |
 | `disableWindChargeEffect` | boolean | 阻止风弹改变方块状态 |
 | `channelingIgnoreConditions` | enum | 允许忽略三叉戟引雷的条件 |
-| `riptideIgnoreConditions` | boolean | 允许忽略三叉戟激流的条件 |
 | `forceOpenContainer` | enum | 允许打开被阻挡的容器 |
 | `truePeacefulMode` | boolean | 生物不会与玩家敌对 |
 | `playerCommandCloseScreen` | boolean | 为 /player 添加 esc 子命令 |
-| `fakePlayerAutoRestock` | boolean | 假玩家自动从背包补货 |
 
 所有规则分类为 `BCL`。使用 `/carpet <规则名> <值>` 切换。
 

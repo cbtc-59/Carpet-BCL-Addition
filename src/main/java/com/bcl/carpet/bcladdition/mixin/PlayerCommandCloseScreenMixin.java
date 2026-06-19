@@ -15,9 +15,8 @@ import static com.mojang.brigadier.arguments.StringArgumentType.word;
 import static com.mojang.brigadier.arguments.StringArgumentType.getString;
 
 /**
- * Adds esc and mannequin subcommands to /player by intercepting the
- * argument("player", ...) builder in PlayerCommand.register().
- * Mirrors Carpet-Org's PlayerCommandExtension approach.
+ * 在 PlayerCommand.register() 中拦截 argument("player", ...) 构建器，
+ * 向 /player 命令添加 esc 子命令。参考 Carpet-Org 的 PlayerCommandExtension 实现。
  */
 @Mixin(PlayerCommand.class)
 public class PlayerCommandCloseScreenMixin {
@@ -34,14 +33,16 @@ public class PlayerCommandCloseScreenMixin {
 
         RequiredArgumentBuilder<ServerCommandSource, ?> builder = original.call(name, type);
 
-        // Add esc subcommand if rule enabled
+        // 规则启用时添加 esc 子命令
         builder.then(literal("esc")
                 .requires(src -> BCLAdditionSettings.playerCommandCloseScreen)
                 .executes(ctx -> {
                     String playerName = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "player");
                     ServerPlayerEntity target = ctx.getSource().getServer()
                             .getPlayerManager().getPlayer(playerName);
-                    if (target == null) return 0;
+                    if (target == null) {
+                        return 0;
+                    }
                     target.closeHandledScreen();
                     return 1;
                 })

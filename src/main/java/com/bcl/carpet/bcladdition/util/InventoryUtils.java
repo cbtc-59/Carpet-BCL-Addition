@@ -12,42 +12,41 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * Inventory utilities for fake player auto restock.
+ * 假玩家自动补货的背包工具类。
  */
 public class InventoryUtils {
 
     /**
-     * Find and move an item from inventory (including shulker boxes)
-     * to the specified hand. Returns true if restock was successful.
-     */
-    /**
-     * Replenish with a target count (finds compatible items by type matching hand stack).
+     * 按目标数量补货——查找与手上物品类型匹配的物品。
      */
     public static boolean replenish(PlayerInventory inventory, Hand hand, int targetCount) {
         ItemStack handStack = inventory.player.getStackInHand(hand);
-        if (handStack.isEmpty()) return false;
+        if (handStack.isEmpty()) {
+            return false;
+        }
         return replenish(inventory, hand,
                 stack -> ItemStack.areItemsAndComponentsEqual(stack, handStack));
     }
 
     /**
-     * Find and move an item from inventory (including shulker boxes)
-     * to the specified hand. Returns true if restock was successful.
+     * 从背包（含潜影盒）找到匹配的物品并移动到指定手上。
      */
     public static boolean replenish(PlayerInventory inventory, Hand hand, Predicate<ItemStack> match) {
         ItemStack handStack = inventory.player.getStackInHand(hand);
         int targetCount = Math.max(1, handStack.isEmpty() ? 64 : handStack.getMaxCount() / 2);
 
-        // Try main inventory first
+        // 先从主物品栏找
         int freeSlot = findAndMove(inventory, match, hand, targetCount, false);
-        if (freeSlot >= 0) return true;
+        if (freeSlot >= 0) {
+            return true;
+        }
 
-        // Try shulker boxes in inventory
+        // 再从背包里的潜影盒找
         return replenishFromShulkerBoxes(inventory, match, hand, targetCount);
     }
 
     /**
-     * Try to find matching items in shulker boxes and move to hand.
+     * 从背包里的潜影盒中查找匹配物品并移动到手上。
      */
     private static boolean replenishFromShulkerBoxes(PlayerInventory inventory,
                                                       Predicate<ItemStack> match,
@@ -60,7 +59,7 @@ public class InventoryUtils {
             if (isOpenableShulkerBox(stack)) {
                 ItemStack extracted = extractFromShulkerBox(stack, match, 1);
                 if (!extracted.isEmpty()) {
-                    // Put extracted item into hand or merge
+                    // 将取出的物品放到手上或合并到手上已有的堆叠
                     ItemStack handStack = inventory.player.getStackInHand(hand);
                     if (handStack.isEmpty()) {
                         inventory.player.setStackInHand(hand, extracted);
@@ -72,12 +71,16 @@ public class InventoryUtils {
                             extracted.decrement(move);
                             if (!extracted.isEmpty()) {
                                 int slot = inventory.getEmptySlot();
-                                if (slot >= 0) inventory.setStack(slot, extracted);
+                                if (slot >= 0) {
+                                    inventory.setStack(slot, extracted);
+                                }
                             }
                         }
                     } else {
                         int slot = inventory.getEmptySlot();
-                        if (slot >= 0) inventory.setStack(slot, extracted);
+                        if (slot >= 0) {
+                            inventory.setStack(slot, extracted);
+                        }
                     }
                     return true;
                 }
@@ -87,13 +90,15 @@ public class InventoryUtils {
     }
 
     /**
-     * Extract items from a shulker box that match the predicate.
+     * 从潜影盒中取出匹配的物品。
      */
     private static ItemStack extractFromShulkerBox(ItemStack shulker, Predicate<ItemStack> match, int count) {
         ContainerComponent contents = shulker.get(DataComponentTypes.CONTAINER);
-        if (contents == null) return ItemStack.EMPTY;
+        if (contents == null) {
+            return ItemStack.EMPTY;
+        }
 
-        // Copy to mutable list for modification
+        // 复制到可变列表以便修改
         DefaultedList<ItemStack> stacks = DefaultedList.ofSize(27, ItemStack.EMPTY);
         contents.copyTo(stacks);
 
@@ -104,7 +109,7 @@ public class InventoryUtils {
                 ItemStack result = stack.copyWithCount(toTake);
                 stack.decrement(toTake);
 
-                // Write modified contents back to shulker box
+                // 将修改后的内容写回潜影盒
                 shulker.set(DataComponentTypes.CONTAINER, ContainerComponent.fromStacks(stacks));
                 return result;
             }
@@ -119,11 +124,17 @@ public class InventoryUtils {
 
         for (int i = 0; i < inventory.main.size() + 1; i++) {
             int idx = (i < inventory.main.size()) ? i : PlayerInventory.OFF_HAND_SLOT;
-            if (idx == handSlot && skipHand) continue;
+            if (idx == handSlot && skipHand) {
+                continue;
+            }
 
             ItemStack stack = i < inventory.main.size() ? inventory.main.get(i) : inventory.offHand.get(0);
-            if (stack.isEmpty() || !match.test(stack)) continue;
-            if (stack == handStack) continue;
+            if (stack.isEmpty() || !match.test(stack)) {
+                continue;
+            }
+            if (stack == handStack) {
+                continue;
+            }
 
             if (handStack.isEmpty()) {
                 int toMove = Math.min(targetCount, stack.getCount());
@@ -144,7 +155,9 @@ public class InventoryUtils {
     }
 
     public static boolean isOpenableShulkerBox(ItemStack stack) {
-        if (stack.isEmpty() || stack.getCount() != 1) return false;
+        if (stack.isEmpty() || stack.getCount() != 1) {
+            return false;
+        }
         ContainerComponent contents = stack.get(DataComponentTypes.CONTAINER);
         return contents != null;
     }

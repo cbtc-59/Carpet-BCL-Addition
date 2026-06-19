@@ -17,11 +17,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Forces end portal frame block items to drop when mined.
+ * 强制末地传送门框架在挖掘后掉落方块物品。
  *
- * Needed because the {@code needs_iron_tool} block tag is not loaded at runtime
- * in the Fabric dev environment, which prevents the vanilla loot table + tool
- * check from working correctly. Without this mixin, no items would drop.
+ * 因为 needs_iron_tool 方块标签在 Fabric 开发环境中不加载，
+ * 导致原版战利品表 + 工具检查无法正常工作。没有这个 Mixin 就不会掉落。
  */
 @Mixin(Block.class)
 public abstract class EndPortalFrameBlockDropMixin {

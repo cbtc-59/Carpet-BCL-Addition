@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Prevents mobs from targeting players when truePeacefulMode is enabled.
+ * 真正的和平模式启用时，阻止生物将玩家设为攻击目标。
  */
 @Mixin(MobEntity.class)
 public class TruePeacefulModeMixin {

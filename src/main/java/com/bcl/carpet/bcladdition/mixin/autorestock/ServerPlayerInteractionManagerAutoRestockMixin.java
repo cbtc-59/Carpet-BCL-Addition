@@ -18,8 +18,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * When a fake player uses an item (place block, throw potion, etc.),
- * auto-restock from inventory after use.
+ * 假玩家使用物品（放置方块、投掷药水等）后，自动从背包补货。
  */
 @Mixin(ServerPlayerInteractionManager.class)
 public class ServerPlayerInteractionManagerAutoRestockMixin {
@@ -40,9 +39,15 @@ public class ServerPlayerInteractionManagerAutoRestockMixin {
     }
 
     private void restock(ItemStack usedStack, Hand hand, ActionResult result) {
-        if (!BCLAdditionSettings.fakePlayerAutoRestock) return;
-        if (!(this.player instanceof EntityPlayerMPFake)) return;
-        if (!result.isAccepted()) return;
+        if (!BCLAdditionSettings.fakePlayerAutoRestock) {
+            return;
+        }
+        if (!(this.player instanceof EntityPlayerMPFake)) {
+            return;
+        }
+        if (!result.isAccepted()) {
+            return;
+        }
 
         ItemStack handStack = this.player.getStackInHand(hand);
         if (InventoryUtils.isFragileWithMending(usedStack)) {

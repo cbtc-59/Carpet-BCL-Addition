@@ -21,14 +21,14 @@ public abstract class EndPortalFrameBlockStateMixin {
         BlockState self = (BlockState) (Object) this;
         Block block = self.getBlock();
 
-        // End Portal Frame → obsidian hardness when mineable
+        // 末地传送门框架 → 可挖掘时设为黑曜石硬度
         if (block instanceof EndPortalFrameBlock) {
             if (BCLAdditionSettings.mineableEndPortalFrame) {
                 cir.setReturnValue(50.0F);
             }
         }
 
-        // Ancient debris and netherite block → 1/18 hardness when soft
+        // 远古残骸和下界合金块 → 开启易碎后降为 1/18 硬度
         if (BCLAdditionSettings.softNetherite) {
             if (block == Blocks.ANCIENT_DEBRIS || block == Blocks.NETHERITE_BLOCK) {
                 cir.setReturnValue(cir.getReturnValue() / 18.0F);

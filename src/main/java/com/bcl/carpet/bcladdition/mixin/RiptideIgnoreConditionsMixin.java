@@ -9,9 +9,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 /**
- * Allows trident riptide to work without touching water or rain.
- * Intercepts the isTouchingWaterOrRain() call inside TridentItem methods
- * and returns true when the rule is enabled.
+ * 允许三叉戟激流在不接触水或雨时也能使用。
+ * 拦截 TridentItem 方法中对 isTouchingWaterOrRain() 的调用，
+ * 规则启用时强制返回 true。
  */
 @Mixin(TridentItem.class)
 public class RiptideIgnoreConditionsMixin {

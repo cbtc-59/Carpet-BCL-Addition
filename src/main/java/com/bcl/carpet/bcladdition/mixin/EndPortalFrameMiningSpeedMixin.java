@@ -28,9 +28,8 @@ public class EndPortalFrameMiningSpeedMixin {
         if (self.getItem() instanceof PickaxeItem) {
             ToolComponent tool = self.get(DataComponentTypes.TOOL);
             if (tool != null) {
-                // The tag system doesn't recognize end_portal_frame as pickaxe-mineable,
-                // so getSpeed() returns the default (1.0F). Use stone as a proxy to get
-                // the pickaxe's actual mining speed from the tool component rule system.
+                // 标签系统不认末地传送门框架为镐可挖掘，所以 getSpeed() 返回 1.0F。
+                // 用石头的默认状态作为代理，从工具组件规则系统获取正确的镐挖掘速度。
                 float correctSpeed = tool.getSpeed(Blocks.STONE.getDefaultState());
                 if (correctSpeed > 1.0F) {
                     cir.setReturnValue(correctSpeed);

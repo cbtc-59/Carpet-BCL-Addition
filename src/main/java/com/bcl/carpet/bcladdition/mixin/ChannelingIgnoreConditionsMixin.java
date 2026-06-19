@@ -22,15 +22,15 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Allows trident channeling to spawn lightning without weather/sky conditions.
- * Controlled by {@code channelingIgnoreConditions} rule.
+ * 允许三叉戟引雷时不考虑天气/露天条件。
+ * 由 {@code channelingIgnoreConditions} 规则控制。
  */
 @Mixin(TridentEntity.class)
 public abstract class ChannelingIgnoreConditionsMixin extends PersistentProjectileEntity {
 
     protected ChannelingIgnoreConditionsMixin(EntityType<?> type, World world) {
         super((EntityType<? extends PersistentProjectileEntity>) type, world);
-        throw new AssertionError("Mixin constructor should not be called");
+        throw new AssertionError("不应调用 Mixin 的构造函数");
     }
 
     @Inject(method = "onBlockHitEnchantmentEffects", at = @At("TAIL"))
@@ -43,25 +43,33 @@ public abstract class ChannelingIgnoreConditionsMixin extends PersistentProjecti
 
     @Inject(method = "onEntityHit", at = @At("TAIL"))
     private void onEntityHit(net.minecraft.util.hit.EntityHitResult entityHitResult, CallbackInfo ci) {
-        if (this.getWorld().isClient) return;
+        if (this.getWorld().isClient) {
+            return;
+        }
         ServerWorld world = (ServerWorld) this.getWorld();
         trySpawnLightning(world, entityHitResult.getEntity().getBlockPos(), this.getWeaponStack());
     }
 
     private void trySpawnLightning(ServerWorld world, BlockPos pos, ItemStack weapon) {
         String mode = BCLAdditionSettings.channelingIgnoreConditions;
-        if ("false".equals(mode)) return;
+        if ("false".equals(mode)) {
+            return;
+        }
 
-        // Check if the weapon has channeling enchantment
+        // 检查武器是否有引雷附魔
         int channelingLevel = EnchantmentHelper.getLevel(
                 world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(Enchantments.CHANNELING).get(),
                 weapon);
-        if (channelingLevel <= 0) return;
+        if (channelingLevel <= 0) {
+            return;
+        }
 
-        // If it's already raining and thundering, vanilla handles it
-        if (world.isRaining() && world.isThundering()) return;
+        // 如果已经是雷雨天，原版会自己处理
+        if (world.isRaining() && world.isThundering()) {
+            return;
+        }
 
-        // Check sky access based on mode
+        // 根据模式检查露天条件
         if ("ignore_weather_and_sky".equals(mode) || world.isSkyVisible(pos)) {
             LightningEntity lightning = EntityType.LIGHTNING_BOLT.spawn(world, pos, SpawnReason.TRIGGERED);
             if (lightning != null && this.getOwner() instanceof ServerPlayerEntity player) {

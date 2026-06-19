@@ -13,9 +13,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * Prevents wind charges from changing block states.
- * Mixes into Explosion.canTriggerBlocks() to block the trigger effect
- * when the explosion source is a wind charge fired by a player.
+ * 阻止风弹改变方块状态。注入 Explosion.canTriggerBlocks()，
+ * 当爆炸来源是玩家发射的风弹时取消方块触发效果。
  */
 @Mixin(Explosion.class)
 public class DisableWindChargeEffectMixin {

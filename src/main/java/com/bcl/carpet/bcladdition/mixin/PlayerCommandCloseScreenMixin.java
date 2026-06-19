@@ -15,8 +15,8 @@ import static com.mojang.brigadier.arguments.StringArgumentType.word;
 import static com.mojang.brigadier.arguments.StringArgumentType.getString;
 
 /**
- * 在 PlayerCommand.register() 中拦截 argument("player", ...) 构建器，
- * 向 /player 命令添加 esc 子命令。参考 Carpet-Org 的 PlayerCommandExtension 实现。
+ * 在PlayerCommand.register()中拦截argument("player", ...)构建器，
+ * 向/player命令添加esc子命令。
  */
 @Mixin(PlayerCommand.class)
 public class PlayerCommandCloseScreenMixin {
@@ -24,10 +24,9 @@ public class PlayerCommandCloseScreenMixin {
     @WrapOperation(
             method = "register",
             at = @At(value = "INVOKE",
-                    target = "Lnet/minecraft/server/command/CommandManager;argument(Ljava/lang/String;Lcom/mojang/brigadier/arguments/ArgumentType;)Lcom/mojang/brigadier/builder/RequiredArgumentBuilder;"),
-            remap = false
+                    target = "Lnet/minecraft/server/command/CommandManager;argument(Ljava/lang/String;Lcom/mojang/brigadier/arguments/ArgumentType;)Lcom/mojang/brigadier/builder/RequiredArgumentBuilder;")
     )
-    private static RequiredArgumentBuilder<ServerCommandSource, ?> wrapArgument(
+    private static RequiredArgumentBuilder<ServerCommandSource, ?> addEsc(
             String name, com.mojang.brigadier.arguments.ArgumentType<?> type,
             Operation<RequiredArgumentBuilder<ServerCommandSource, ?>> original) {
 
@@ -37,7 +36,7 @@ public class PlayerCommandCloseScreenMixin {
         builder.then(literal("esc")
                 .requires(src -> BCLAdditionSettings.playerCommandCloseScreen)
                 .executes(ctx -> {
-                    String playerName = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "player");
+                    String playerName = getString(ctx, "player");
                     ServerPlayerEntity target = ctx.getSource().getServer()
                             .getPlayerManager().getPlayer(playerName);
                     if (target == null) {

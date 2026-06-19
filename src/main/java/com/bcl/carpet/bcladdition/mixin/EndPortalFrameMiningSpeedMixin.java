@@ -22,13 +22,15 @@ public class EndPortalFrameMiningSpeedMixin {
             return;
         }
         if (!BCLAdditionSettings.mineableEndPortalFrame) {
+            // 规则关闭时强制取消镐子加速
+            cir.setReturnValue(1.0F);
             return;
         }
         ItemStack self = (ItemStack) (Object) this;
         if (self.getItem() instanceof PickaxeItem) {
             ToolComponent tool = self.get(DataComponentTypes.TOOL);
             if (tool != null) {
-                // 标签系统不认末地传送门框架为镐可挖掘，所以 getSpeed() 返回 1.0F。
+                // 标签系统不认末地传送门框架为镐可挖掘，所以getSpeed()返回1.0F。
                 // 用石头的默认状态作为代理，从工具组件规则系统获取正确的镐挖掘速度。
                 float correctSpeed = tool.getSpeed(Blocks.STONE.getDefaultState());
                 if (correctSpeed > 1.0F) {

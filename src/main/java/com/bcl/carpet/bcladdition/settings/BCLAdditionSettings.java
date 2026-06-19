@@ -49,4 +49,5 @@ public class BCLAdditionSettings {
             categories = {BCL, COMMAND}
     )
     public static boolean playerCommandCloseScreen = false;
+
 }

@@ -24,5 +24,5 @@
     "carpet.rule.truePeacefulMode.desc": "Mobs will not become hostile towards players",
 
     "carpet.rule.playerCommandCloseScreen.name": "Close Current Screen",
-    "carpet.rule.playerCommandCloseScreen.desc": "Enables /player esc subcommand to close a player's screen"
+    "carpet.rule.playerCommandCloseScreen.desc": "Adds /player esc subcommand to close target screen"
 }

@@ -5,7 +5,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.Version;
 
 /**
- * 仅在 Carpet-Org-Addition 已安装且版本 >= 1.41.5 时才注册规则。
+ * 仅在Carpet-Org-Addition已安装且版本>=1.41.5时才注册规则。
  */
 public class CarpetOrgRequired implements Rule.Condition {
 

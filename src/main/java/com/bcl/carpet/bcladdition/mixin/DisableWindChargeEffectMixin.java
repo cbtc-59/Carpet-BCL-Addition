@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * 阻止风弹改变方块状态。注入 Explosion.canTriggerBlocks()，
+ * 阻止风弹改变方块状态。注入Explosion.canTriggerBlocks()，
  * 当爆炸来源是玩家发射的风弹时取消方块触发效果。
  */
 @Mixin(Explosion.class)

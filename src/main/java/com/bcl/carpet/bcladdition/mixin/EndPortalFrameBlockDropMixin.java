@@ -19,8 +19,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**
  * 强制末地传送门框架在挖掘后掉落方块物品。
  *
- * 因为 needs_iron_tool 方块标签在 Fabric 开发环境中不加载，
- * 导致原版战利品表 + 工具检查无法正常工作。没有这个 Mixin 就不会掉落。
+ * 因为needs_iron_tool方块标签在Fabric开发环境中不加载，
+ * 导致原版战利品表+工具检查无法正常工作。没有这个Mixin就不会掉落。
  */
 @Mixin(Block.class)
 public abstract class EndPortalFrameBlockDropMixin {

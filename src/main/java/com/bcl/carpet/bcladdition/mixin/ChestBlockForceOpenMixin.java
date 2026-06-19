@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * 强制打开被方块挡住的箱子和陷阱箱。仅在 any 模式下生效。
+ * 强制打开被方块挡住的箱子和陷阱箱。仅在any模式下生效。
  */
 @Mixin(ChestBlock.class)
 public class ChestBlockForceOpenMixin {

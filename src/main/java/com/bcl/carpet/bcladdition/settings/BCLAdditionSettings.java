@@ -30,11 +30,6 @@ public class BCLAdditionSettings {
     public static String channelingIgnoreConditions = "false";
 
     @Rule(
-            categories = {BCL, FEATURE}
-    )
-    public static boolean riptideIgnoreConditions = false;
-
-    @Rule(
             categories = {BCL, SURVIVAL},
             options = {"false", "shulker_box", "any"},
             strict = true
@@ -47,13 +42,6 @@ public class BCLAdditionSettings {
             categories = {BCL, SURVIVAL}
     )
     public static boolean truePeacefulMode = false;
-
-    // === 假玩家类 ===
-
-    @Rule(
-            categories = {BCL, SURVIVAL}
-    )
-    public static boolean fakePlayerAutoRestock = false;
 
     // === 命令类 ===
 

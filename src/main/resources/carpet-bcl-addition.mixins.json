@@ -12,12 +12,8 @@
         "ShulkerBoxForceOpenMixin",
         "ChestBlockForceOpenMixin",
         "EnderChestForceOpenMixin",
-        "RiptideIgnoreConditionsMixin",
         "TruePeacefulModeMixin",
-        "PlayerCommandCloseScreenMixin",
-        "autorestock.ItemStackAutoRestockMixin",
-        "autorestock.LivingEntityAutoRestockMixin",
-        "autorestock.ServerPlayerInteractionManagerAutoRestockMixin"
+        "PlayerCommandCloseScreenMixin"
     ],
     "injectors": {
         "defaultRequire": 1

@@ -14,17 +14,11 @@
     "carpet.rule.channelingIgnoreConditions.extra.1": "ignore_weather: ignores weather condition",
     "carpet.rule.channelingIgnoreConditions.extra.2": "ignore_weather_and_sky: ignores weather and sky access conditions",
 
-    "carpet.rule.riptideIgnoreConditions.name": "Riptide Ignore Conditions",
-    "carpet.rule.riptideIgnoreConditions.desc": "Allows ignoring conditions for trident riptide",
-
     "carpet.rule.forceOpenContainer.name": "Force Open Container",
     "carpet.rule.forceOpenContainer.desc": "Allows opening blocked containers",
     "carpet.rule.forceOpenContainer.extra.0": "false: rule disabled",
     "carpet.rule.forceOpenContainer.extra.1": "shulker_box: can open blocked shulker boxes",
     "carpet.rule.forceOpenContainer.extra.2": "any: can open any blocked container",
-
-    "carpet.rule.fakePlayerAutoRestock.name": "Fake Player Auto Restock",
-    "carpet.rule.fakePlayerAutoRestock.desc": "Allows fake players to automatically restock items from inventory",
 
     "carpet.rule.truePeacefulMode.name": "True Peaceful Mode",
     "carpet.rule.truePeacefulMode.desc": "Mobs will not become hostile towards players",

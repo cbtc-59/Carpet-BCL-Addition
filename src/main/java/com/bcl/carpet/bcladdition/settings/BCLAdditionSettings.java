@@ -15,13 +15,6 @@ public class BCLAdditionSettings {
     )
     public static boolean mineableEndPortalFrame = false;
 
-    // === 硬度类 ===
-
-    @Rule(
-            categories = {BCL, SURVIVAL}
-    )
-    public static boolean softNetherite = false;
-
     // === 特性类 ===
 
     @Rule(

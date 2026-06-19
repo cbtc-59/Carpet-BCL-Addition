@@ -5,9 +5,6 @@
     "carpet.rule.mineableEndPortalFrame.extra.1": "硬度设置为 50.0（与黑曜石相同，需要钻石/下界合金镐）",
     "carpet.rule.category.BCL": "BCL Addition",
 
-    "carpet.rule.softNetherite.name": "易碎下界合金",
-    "carpet.rule.softNetherite.desc": "启用后远古残骸和下界合金块的硬度将被调整为原值的1/18",
-
     "carpet.rule.disableWindChargeEffect.name": "禁用风弹效果",
     "carpet.rule.disableWindChargeEffect.desc": "阻止玩家发射的风弹改变方块状态",
 

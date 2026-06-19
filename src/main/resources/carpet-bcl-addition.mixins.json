@@ -7,7 +7,6 @@
         "EndPortalFrameBlockStateMixin",
         "EndPortalFrameBlockDropMixin",
         "EndPortalFrameMiningSpeedMixin",
-        "SoftNetheriteMixin",
         "DisableWindChargeEffectMixin",
         "ChannelingIgnoreConditionsMixin",
         "ShulkerBoxForceOpenMixin",

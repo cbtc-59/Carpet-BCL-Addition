@@ -5,10 +5,6 @@
     "carpet.rule.mineableEndPortalFrame.extra.1": "Hardness is set to 50.0 (same as obsidian, requires diamond/netherite pickaxe)",
     "carpet.rule.category.BCL": "BCL Addition",
 
-    "carpet.rule.softNetherite.name": "Soft Netherite",
-    "carpet.rule.softNetherite.desc": "Makes netherite blocks and ancient debris softer",
-    "carpet.rule.softNetherite.extra.0": "When enabled, ancient debris and netherite block hardness is reduced to 1/18",
-
     "carpet.rule.disableWindChargeEffect.name": "Disable Wind Charge Effect",
     "carpet.rule.disableWindChargeEffect.desc": "Prevents wind charges from changing block states",
 
